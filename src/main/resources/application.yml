@@ -1,0 +1,7 @@
+#logging:
+#  pattern:
+#    console: "%d - %msg%n"
+##  path: C:\Apps\log
+#  file: C:\Apps\log\sell.log
+#  level:
+#    com.persistence.sell.LoggerTest: debug

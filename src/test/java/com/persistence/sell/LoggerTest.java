@@ -17,8 +17,10 @@ public class LoggerTest {
 
     @Test
     public void test1() {
+        String name = "孙正";
+        String password = "haha";
         log.debug("debug...");
-        log.info("info...");
+        log.info("info,name={},password={}", name, password);
         log.error("error...");
     }
 }

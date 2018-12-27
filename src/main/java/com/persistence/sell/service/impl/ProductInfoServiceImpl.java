@@ -5,18 +5,22 @@ import com.persistence.sell.enums.ProductStatusEnum;
 import com.persistence.sell.repository.ProductInfoRepository;
 import com.persistence.sell.service.ProductInfoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Service
 public class ProductInfoServiceImpl implements ProductInfoService {
 
     @Autowired
     private ProductInfoRepository repository;
 
     @Override
-    public ProductInfo findOne(String productId) {
-        return null;
+    public Optional<ProductInfo> findOne(String productId) {
+        return repository.findById(productId);
     }
 
     @Override
@@ -25,12 +29,12 @@ public class ProductInfoServiceImpl implements ProductInfoService {
     }
 
     @Override
-    public List<ProductInfo> findAll(Pageable pageable) {
-        return null;
+    public Page<ProductInfo> findAll(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 
     @Override
     public ProductInfo save(ProductInfo productInfo) {
-        return null;
+        return repository.save(productInfo);
     }
 }

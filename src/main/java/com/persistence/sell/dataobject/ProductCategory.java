@@ -21,17 +21,16 @@ public class ProductCategory {
     /*类目编号*/
     private Integer categoryType;
 
-    /*创建时间*/
-    private Date createTime;
-
-    private Date updateTime;
-
-    @Override
-    public String toString() {
-        return "ProductCategory{" +
-                "categoryId=" + categoryId +
-                ", categoryName='" + categoryName + '\'' +
-                ", categoryType=" + categoryType +
-                '}';
+    public ProductCategory(String categoryName, Integer categoryType) {
+        this.categoryName = categoryName;
+        this.categoryType = categoryType;
     }
+
+    public ProductCategory() {
+    }
+
+    /*创建时间*/
+//    private Date createTime;
+//
+//    private Date updateTime;
 }

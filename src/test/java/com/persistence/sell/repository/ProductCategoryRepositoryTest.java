@@ -27,10 +27,16 @@ public class ProductCategoryRepositoryTest {
 
     @Test
     public void saveTest() {
-        Optional<ProductCategory> productCategoryOptional = repository.findById(2);
-        ProductCategory productCategory = productCategoryOptional.get();
-        productCategory.setCategoryType(3);
-        repository.save(productCategory);
+//        Optional<ProductCategory> productCategoryOptional = repository.findById(2);
+//        ProductCategory productCategory = productCategoryOptional.get();
+//        productCategory.setCategoryType(3);
+//        repository.save(productCategory);
+
+
+        ProductCategory productCategory = new ProductCategory("女生最爱", 5);
+        ProductCategory result = repository.save(productCategory);
+        Assert.assertNotNull(result);
+
     }
 
 

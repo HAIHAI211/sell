@@ -47,14 +47,14 @@ public class ProductInfoServiceImplTest {
     @Test
     public void save() {
         ProductInfo productInfo = new ProductInfo();
-        productInfo.setProductId("123457");
-        productInfo.setProductName("皮皮虾");
-        productInfo.setProductPrice(new BigDecimal(3.2));
+        productInfo.setProductId("1234578");
+        productInfo.setProductName("小麻花");
+        productInfo.setProductPrice(new BigDecimal(10));
         productInfo.setProductStock(100);
-        productInfo.setProductDescription("很好吃的虾");
+        productInfo.setProductDescription("很好吃的小麻花");
         productInfo.setProductIcon("http://xxx.jpg");
         productInfo.setProductStatus(ProductStatusEnum.Down.getCode());
-        productInfo.setCategoryType(1);
+        productInfo.setCategoryType(2);
         ProductInfo result = productInfoService.save(productInfo);
         Assert.assertNotNull(result);
     }

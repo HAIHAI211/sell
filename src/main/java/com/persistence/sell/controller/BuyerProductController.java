@@ -4,6 +4,7 @@ import com.persistence.sell.dataobject.ProductCategory;
 import com.persistence.sell.dataobject.ProductInfo;
 import com.persistence.sell.service.ProductCategoryService;
 import com.persistence.sell.service.ProductInfoService;
+import com.persistence.sell.utils.ResultVoUtils;
 import com.persistence.sell.vo.ProductInfoVo;
 import com.persistence.sell.vo.ProductVo;
 import com.persistence.sell.vo.ResultVo;
@@ -52,9 +53,6 @@ public class BuyerProductController {
         for (ProductCategory productCategory: productCategoryList) {
             ProductVo productVo = new ProductVo();
             BeanUtils.copyProperties(productCategory, productVo);
-//            productVo.setCategoryType(productCategory.getCategoryType());
-//            productVo.setCategoryName(productCategory.getCategoryName());
-
             List<ProductInfoVo> productInfoVoList = new ArrayList<>();
             for (ProductInfo productInfo: productInfoList) {
                 if (productInfo.getCategoryType().equals(productCategory.getCategoryType())) {
@@ -66,11 +64,6 @@ public class BuyerProductController {
             productVo.setProductInfoVoList(productInfoVoList);
             productVoList.add(productVo);
         }
-
-        ResultVo resultVo = new ResultVo();
-        resultVo.setCode(0);
-        resultVo.setMsg("成功");
-        resultVo.setData(productVoList);
-        return resultVo;
+        return ResultVoUtils.success(productVoList);
     }
 }

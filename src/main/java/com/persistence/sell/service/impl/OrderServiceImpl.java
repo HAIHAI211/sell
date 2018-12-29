@@ -1,6 +1,7 @@
 package com.persistence.sell.service.impl;
 
 import com.persistence.sell.dataobject.OrderDetail;
+import com.persistence.sell.dataobject.ProductInfo;
 import com.persistence.sell.dto.OrderDTO;
 import com.persistence.sell.service.OrderService;
 import com.persistence.sell.service.ProductInfoService;
@@ -8,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -20,7 +23,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 1、查询商品(数量，价格)
         for (OrderDetail orderDetail: orderDTO.getOrderDetailList()){
-
+           Optional<ProductInfo> productInfoOptional =  productInfoService.findOne(orderDetail.getProductId());
         }
         // 2、计算总价
 

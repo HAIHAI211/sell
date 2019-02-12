@@ -1,5 +1,6 @@
 package com.persistence.sell.utils;
 
+import com.persistence.sell.enums.catstory.ResultEnum;
 import com.persistence.sell.vo.ResultVo;
 
 public class ResultVoUtils {
@@ -20,5 +21,8 @@ public class ResultVoUtils {
         resultVo.setCode(code);
         resultVo.setMsg(msg);
         return resultVo;
+    }
+    public static ResultVo error(ResultEnum resultEnum) {
+        return error(resultEnum.getCode(), resultEnum.getMessage());
     }
 }

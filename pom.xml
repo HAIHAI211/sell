@@ -40,6 +40,14 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+
+
         <!--除了在get/set上方便@data，而且在日志上也方便@Slf4j-->
         <dependency>
             <groupId>org.projectlombok</groupId>
